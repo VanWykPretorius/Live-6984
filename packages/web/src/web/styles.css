@@ -1,0 +1,101 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme inline {
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 14px;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-leaf: var(--leaf);
+  --color-warning: var(--warning);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 6px;
+  --background: #f6f3ea;
+  --foreground: #17231a;
+  --card: #ffffff;
+  --card-foreground: #17231a;
+  --popover: #ffffff;
+  --popover-foreground: #17231a;
+  --primary: #1c4025;
+  --primary-foreground: #f6f3ea;
+  --secondary: #ece7d8;
+  --secondary-foreground: #1c4025;
+  --muted: #efebdf;
+  --muted-foreground: #6b7268;
+  --accent: #c1662f;
+  --accent-foreground: #ffffff;
+  --leaf: #4a7c43;
+  --warning: #b98900;
+  --destructive: #b3261e;
+  --border: #e2dccc;
+  --input: #d9d2be;
+  --ring: #4a7c43;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-size: 14px;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+    font-variation-settings: "SOFT" 0, "WONK" 0;
+  }
+  table {
+    font-variant-numeric: tabular-nums;
+  }
+  input,
+  select,
+  textarea {
+    font-variant-numeric: tabular-nums;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #d5cdb8;
+    border-radius: 999px;
+  }
+}
+
+@utility num {
+  font-variant-numeric: tabular-nums;
+}
+
+@utility card-surface {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgb(23 35 26 / 0.04);
+}
